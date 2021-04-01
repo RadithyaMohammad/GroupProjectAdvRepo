@@ -1,8 +1,8 @@
-//April 1st
+//first 
 public class FirstClass {
 
 	public static void main(String[] args) {
-		System.out.println("First pull commit");
+		// TODO Auto-generated method stub
 
 	}
 
