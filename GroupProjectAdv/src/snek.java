@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 public class snek
 implements KeyListener, ActionListener {
-
+ 
 	public final int TILESIZE = 45;
 	public final int GRIDHEIGHT=15;
 	public final int GRIDWIDTH=15;
