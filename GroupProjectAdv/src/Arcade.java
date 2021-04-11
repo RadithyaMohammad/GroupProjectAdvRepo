@@ -45,7 +45,7 @@ public class Arcade implements ActionListener {
 		frame.add(game3);
 		frame.add(label);
 		
-		frame.add(new JLabel(new ImageIcon("/Users/SanadHajarat21/git/GroupProjectAdvRepo/GroupProjectAdv/ArcadeMachine.jpeg")));
+		frame.add(new JLabel(new ImageIcon("/Users/radithyamohammad/git/GroupProjectAdvRepo/GroupProjectAdv/ArcadeMachine.jpeg")));
 		
 		frame.setVisible(true);
 	}
