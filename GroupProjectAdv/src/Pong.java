@@ -15,14 +15,14 @@ import javax.swing.JPanel;
 public class Pong extends JPanel implements KeyListener, ActionListener {
 	
 	// constants that are predefined and won't change as the program runs
-	private final int WIDTH = 600, HEIGHT = 600, WINDOW_HEIGHT = 650;
+	private final int WIDTH = 600, HEIGHT =600, WINDOW_HEIGHT = 650;
 	private final int PADDLE_WIDTH = 20, DIAM = 15, PADDLE_HEIGHT = 100;
 	private final int PADDLE_SPEED = 7;
 
 	// Balls placement & speed horizontally & vertically along with paddle placement & score keeping
 	private int ballX = WIDTH/2, ballY = HEIGHT/2;
 	private int ballX2 = WIDTH/2, ballY2 = HEIGHT/2;
-	private int speedX = 4, speedY = 7, speedX2 = 0, speedY2 = 0;
+	private int speedX = 3, speedY = 5, speedX2 = 0, speedY2 = 0;
 	private int paddle1 = HEIGHT/2- PADDLE_HEIGHT/2, paddle2 = HEIGHT/2 - PADDLE_HEIGHT/2, pSpeed = 8;
 	private int score1 = 0, score2 = 0;
 	private int paddle1x = 0, paddle2x = WIDTH-PADDLE_WIDTH;

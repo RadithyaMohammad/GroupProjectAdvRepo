@@ -26,11 +26,11 @@ public class Arcade implements ActionListener {
 		frame.setFocusable(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		game1 = new JButton("Game 1");
+		game1 = new JButton("Pong");
 		game1.setBounds(101,30,300,100);
 		game1.addActionListener(this);
 		
-		game2 = new JButton("Game 2");
+		game2 = new JButton("Snake");
 		game2.setBounds(101,130,300,100);
 		game2.addActionListener(this);
 		
@@ -45,7 +45,7 @@ public class Arcade implements ActionListener {
 		frame.add(game3);
 		frame.add(label);
 		
-		frame.add(new JLabel(new ImageIcon("/Users/radithyamohammad/git/GroupProjectAdvRepo/GroupProjectAdv/ArcadeMachine.jpeg")));
+		frame.add(new JLabel(new ImageIcon("ArcadeMachine.jpeg")));
 		
 		frame.setVisible(true);
 	}
@@ -54,6 +54,9 @@ public class Arcade implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==game1) {
 			new Pong();
+		}
+		if (e.getSource()==game2) {
+			new GameFrame();
 		}
 	}
 
