@@ -45,7 +45,7 @@ public class Arcade implements ActionListener {
 		frame.add(game3);
 		frame.add(label);
 		
-		frame.add(new JLabel(new ImageIcon("/Users/radithyamohammad/git/GroupProjectAdvRepo/GroupProjectAdv/ArcadeMachine.jpeg")));
+		frame.add(new JLabel(new ImageIcon("ArcadeMachine.jpeg")));
 		
 		frame.setVisible(true);
 	}
@@ -54,6 +54,10 @@ public class Arcade implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==game1) {
 			new Pong();
+		}
+		
+		if (e.getSource()==game2) {
+			new GameFrame();
 		}
 	}
 
