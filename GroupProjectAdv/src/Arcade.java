@@ -9,7 +9,6 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-
 //Radithya and Sanad
 public class Arcade implements ActionListener {
 	
