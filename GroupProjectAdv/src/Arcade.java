@@ -34,15 +34,10 @@ public class Arcade implements ActionListener {
 		game2.setBounds(101,130,300,100);
 		game2.addActionListener(this);
 		
-		game3 = new JButton("Game 3");
-		game3.setBounds(101,230,300,100);
-		game3.addActionListener(this);
-		
 		label = new JLabel();
 		
 		frame.add(game1);
 		frame.add(game2);
-		frame.add(game3);
 		frame.add(label);
 		
 		frame.add(new JLabel(new ImageIcon("ArcadeMachine.jpeg")));
