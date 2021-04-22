@@ -14,7 +14,7 @@ public class FlappyBird {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setVisible(true);
-	}
+	} 
 
 	//main method
 	public static void main(String[] args) {
