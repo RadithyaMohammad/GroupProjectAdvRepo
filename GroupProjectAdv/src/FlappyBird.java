@@ -11,9 +11,9 @@ public class FlappyBird {
 		frame = new JFrame();
 		
 		frame.setSize(WIDTH, HEIGHT);	
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
 		frame.setVisible(true);
-		
-		
 	}
 
 	//main method
