@@ -285,14 +285,17 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 	public Pong() {
 		JFrame frame = new JFrame();
 		JButton button = new JButton("restart");
+		JButton guidelines = new JButton("Guidelines");
 		frame.setSize(WIDTH+6, WINDOW_HEIGHT);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(this);
 		frame.add(button, BorderLayout.SOUTH);
+		frame.add(guidelines, BorderLayout.NORTH);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		frame.setVisible(true);
 		button.addActionListener(this);
+		guidelines.addActionListener(this);
 		this.addKeyListener(this);
 		this.setFocusable(true);
 		
