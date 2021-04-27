@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -31,7 +32,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 	private boolean up1, down1, up2, down2; 		// booleans to keep track of paddle movement
 	private boolean solo = false;					// playing against AI
 	private boolean addBall = false;				// adds a new ball to the game which AI can't beat
-	
+		
 	// this method moves the ball at each timestep
 	public void move_ball() {
 		ballX += speedX;
@@ -285,17 +286,14 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 	public Pong() {
 		JFrame frame = new JFrame();
 		JButton button = new JButton("restart");
-		JButton guidelines = new JButton("Guidelines");
 		frame.setSize(WIDTH+6, WINDOW_HEIGHT);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(this);
 		frame.add(button, BorderLayout.SOUTH);
-		frame.add(guidelines, BorderLayout.NORTH);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		frame.setVisible(true);
 		button.addActionListener(this);
-		guidelines.addActionListener(this);
 		this.addKeyListener(this);
 		this.setFocusable(true);
 		

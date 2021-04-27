@@ -8,10 +8,6 @@ import javax.swing.JFrame;
 public class GameFrame extends JFrame implements ActionListener{
 
 	GameFrame(){
-		
-		JButton guidelines = new JButton("Guidelines");
-		this.add(guidelines, BorderLayout.NORTH);
-		guidelines.addActionListener(this);
 
 		this.add(new GamePanel());
 		this.setTitle("Snake");
