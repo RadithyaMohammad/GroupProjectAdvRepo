@@ -21,3 +21,4 @@ public class FlappyBird {
 		flappybird = new FlappyBird();
 	}
 }
+ 
