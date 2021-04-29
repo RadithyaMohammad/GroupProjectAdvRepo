@@ -35,7 +35,7 @@ public class Arcade implements ActionListener {
 		game2.setBounds(101,130,200,100);
 		game2.addActionListener(this);
 		
-		game3 = new JButton("Game 3");
+		game3 = new JButton("Tic-Tac-Toe");
 		game3.setBounds(101,230,200,100);
 		game3.addActionListener(this);
 		
@@ -84,6 +84,10 @@ public class Arcade implements ActionListener {
 		if (e.getSource()==game2) {
 			new GameFrame();
 		}
+		
+		if (e.getSource()==game3)
+			new TicTacToe();
+		
 		if (e.getSource()==guidelines) {
 			guidelines();
 		}
