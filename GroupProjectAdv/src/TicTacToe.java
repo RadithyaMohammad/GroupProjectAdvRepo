@@ -24,7 +24,7 @@ public class TicTacToe implements ActionListener{
 		frame.setVisible(true);
 
 		//text at the top of
-		textfield.setFont(new Font("Ink Free",Font.BOLD,75));
+		textfield.setFont(new Font("Arial",Font.BOLD,75));
 		textfield.setHorizontalAlignment(JLabel.CENTER);
 
 		//grid layout for the buttons
