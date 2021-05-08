@@ -270,7 +270,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 
 		// closing the graphics window will end the program
 		while (true) {
-
+ 
 			// draws the game
 			repaint();
 
