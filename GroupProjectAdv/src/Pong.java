@@ -282,7 +282,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 
 
 			//rests for a hundredth of a second
-			try {				
+			try {			
 				Thread.sleep(10);
 			}
 
