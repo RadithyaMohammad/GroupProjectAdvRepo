@@ -35,7 +35,7 @@ public class TicTacToe implements ActionListener{
 		for(int i=0;i<9;i++) {
 			buttons[i] = new JButton();
 			button_panel.add(buttons[i]);
-			buttons[i].setFont(new Font("MV Boli",Font.BOLD,120));
+			buttons[i].setFont(new Font("Arial",Font.BOLD,120));
 			buttons[i].addActionListener(this);
 		}
 		
@@ -51,7 +51,7 @@ public class TicTacToe implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		//checking button presses and show the X or the O.
-		for(int i=0;i<9;i++) {
+		for(int i=0;i<9;i++) { 
 			if(e.getSource()==buttons[i]) {
 				if(player1_turn) {
 					if(buttons[i].getText()=="") {
@@ -73,6 +73,16 @@ public class TicTacToe implements ActionListener{
 					}
 				}
 			}			
+		}
+	}
+	
+	public void keyPressed(KeyEvent e) {
+		
+		if (e.getKeyChar()=='p') {
+			for(int i=0;i<9;i++) {
+				buttons[i].setEnabled(false);
+			}
+			textfield.setText("Game Paused");
 		}
 	}
 

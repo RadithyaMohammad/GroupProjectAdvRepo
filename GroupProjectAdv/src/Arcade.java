@@ -22,7 +22,7 @@ public class Arcade implements ActionListener {
 	
 	public Arcade() {
 		frame = new JFrame("Welcome to the Arcade");
-		frame.setSize(500, 500);
+		frame.setSize(800, 800);
 		frame.setResizable(false);
 		frame.setFocusable(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,7 +68,8 @@ public class Arcade implements ActionListener {
 				+ "Use WASD or the arrows to move around as the snake!\n"
 				+ "Try and collect as much apples as you can to grow larger.\n"
 				+ "Avoid overlapping yourself or reaching the edge as you will die.\n"
-				+ "Try reaching as much score as you can without the game ending! Good luck!");
+				+ "Try reaching as much score as you can without the game ending! Good luck!\n\n"
+				+ "Guidlines on how to play Tic Tac Toe!\n");
 		ta.setBounds(0, 0, 500, 200);
 		gf.add(ta);
 		gf.setSize(500,200);
