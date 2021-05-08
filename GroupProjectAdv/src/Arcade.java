@@ -90,20 +90,17 @@ public class Arcade implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()==game1) {
+		if (e.getSource()==game1)
 			new Pong();
-		}
 		
-		if (e.getSource()==game2) {
+		if (e.getSource()==game2)
 			new GameFrame();
-		}
 		
 		if (e.getSource()==game3)
 			new TicTacToe();
 		
-		if (e.getSource()==guidelines) {
+		if (e.getSource()==guidelines)
 			guidelines();
-		}
 	}
 
 	
