@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-//April 27th, 10 PM 
+//May 8th, 10 PM 
 //Radithya and Sanad
 public class Arcade implements ActionListener {
 	
@@ -92,12 +92,12 @@ public class Arcade implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==game1)
 			new Pong();
-		
-		if (e.getSource()==game2)
-			new GameFrame();
-		
-		if (e.getSource()==game3)
-			new TicTacToe();
+	
+//		if (e.getSource()==game2)
+//			new GameFrame();
+//		
+//		if (e.getSource()==game3) 
+//			new TicTacToe();
 		
 		if (e.getSource()==guidelines)
 			guidelines();
