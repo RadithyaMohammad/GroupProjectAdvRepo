@@ -10,7 +10,7 @@ public class GameFrame extends JFrame implements ActionListener{
 	
 	GameFrame(){
 
-		this.add(new GamePanel());
+		this.add( new GamePanel() );
 		this.setTitle("Snake");
 		this.setResizable(false);
 		this.pack();
@@ -25,6 +25,6 @@ public class GameFrame extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String[] args) {
-		new GameFrame();
+		GameFrame runner = new GameFrame();
 	}
 }

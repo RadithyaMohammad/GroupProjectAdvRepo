@@ -14,7 +14,6 @@ public class TicTacToe implements ActionListener{
 
 	JButton[] buttons = new JButton[9]; //an array of nine buttons
 	boolean player1_turn; //true if player 1's turn, false if player 2's turn
-	JButton restart = new JButton("Restart");
 
 	//constructor
 	TicTacToe(){
@@ -43,7 +42,6 @@ public class TicTacToe implements ActionListener{
 		title_panel.add(textfield);
 		frame.add(title_panel,BorderLayout.NORTH);
 		frame.add(button_panel);
-		frame.add(restart, BorderLayout.SOUTH);
 
 		firstTurn();
 	}
@@ -75,13 +73,6 @@ public class TicTacToe implements ActionListener{
 				}
 
 			}			
-		}
-		if (e.getSource() == restart) {
-			for (int i=0;i<9;i++) {
-				buttons[i].setText("");
-				buttons[i].setEnabled(true);
-			}
-		
 		}
 	
 	}
