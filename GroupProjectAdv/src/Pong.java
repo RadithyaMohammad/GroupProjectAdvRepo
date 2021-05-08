@@ -12,6 +12,10 @@ import javax.swing.JPanel;
 
 public class Pong extends JPanel implements KeyListener, ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3098451003264165324L;
 	// constants that are predefined and won't change as the program runs
 	private final int WIDTH = 600, HEIGHT =600, WINDOW_HEIGHT = 650;
 	private final int PADDLE_WIDTH = 20, DIAM = 15, PADDLE_HEIGHT = 100;
@@ -35,6 +39,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 		JButton button = new JButton("restart");
 		
 		frame.setSize(WIDTH+6, WINDOW_HEIGHT);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(this);
 		frame.add(button, BorderLayout.SOUTH);
 		frame.setResizable(false);
@@ -282,12 +287,13 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 
 
 			//rests for a hundredth of a second
-			try {			
+			try {
+				
 				Thread.sleep(10);
 			}
 
 			catch (Exception ex) {
-				System.out.println("failed");
+
 			}
 		}
 	}
@@ -307,6 +313,6 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 
 	//main method
 	public static void main(String[] args) {
-		new Pong();
+		Pong runner = new Pong();
 	}
 }
