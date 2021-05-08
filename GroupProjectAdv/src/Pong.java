@@ -284,7 +284,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 			//rests for a hundredth of a second
 			try {				
 				Thread.sleep(10);
-			} 
+			}
 
 			catch (Exception ex) {
 				System.out.println("failed");
