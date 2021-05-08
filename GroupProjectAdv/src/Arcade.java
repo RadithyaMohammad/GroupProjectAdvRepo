@@ -54,7 +54,6 @@ public class Arcade implements ActionListener {
 		
 		label = new JLabel();
 		
-		
 		frame.add(game1);
 		frame.add(game2);
 		frame.add(game3);

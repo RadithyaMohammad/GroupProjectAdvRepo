@@ -2,19 +2,20 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Rectangle;
-import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener; 
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Pong extends JPanel implements KeyListener, ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3098451003264165324L;
 	// constants that are predefined and won't change as the program runs
 	private final int WIDTH = 600, HEIGHT =600, WINDOW_HEIGHT = 650;
 	private final int PADDLE_WIDTH = 20, DIAM = 15, PADDLE_HEIGHT = 100;
@@ -247,6 +248,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 			addBall = false;
 			speedX2 = 0;
 			speedY2 = 0;
+		
 		}
 	}
 

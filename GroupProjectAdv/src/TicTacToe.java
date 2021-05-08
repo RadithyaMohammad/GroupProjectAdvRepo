@@ -14,6 +14,7 @@ public class TicTacToe implements ActionListener{
 
 	JButton[] buttons = new JButton[9]; //an array of nine buttons
 	boolean player1_turn; //true if player 1's turn, false if player 2's turn
+	JButton restart = new JButton("Restart");
 
 	//constructor
 	TicTacToe(){
@@ -38,18 +39,19 @@ public class TicTacToe implements ActionListener{
 			buttons[i].setFont(new Font("Arial",Font.BOLD,120));
 			buttons[i].addActionListener(this);
 		}
-		
+
 		//adding components
 		title_panel.add(textfield);
 		frame.add(title_panel,BorderLayout.NORTH);
 		frame.add(button_panel);
+		frame.add(restart, BorderLayout.SOUTH);
 
 		firstTurn();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+
 		//checking button presses and show the X or the O.
 		for(int i=0;i<9;i++) { 
 			if(e.getSource()==buttons[i]) {
@@ -72,12 +74,21 @@ public class TicTacToe implements ActionListener{
 						check();
 					}
 				}
+
 			}			
 		}
-	}
-	
-	public void keyPressed(KeyEvent e) {
+		if (e.getSource() == restart) {
+			for (int i=0;i<9;i++) {
+				buttons[i].setText("");
+				buttons[i].setEnabled(true);
+			}
 		
+		}
+	
+	}
+
+	public void keyPressed(KeyEvent e) {
+
 		if (e.getKeyChar()=='p') {
 			for(int i=0;i<9;i++) {
 				buttons[i].setEnabled(false);
@@ -87,13 +98,13 @@ public class TicTacToe implements ActionListener{
 	}
 
 	public void firstTurn() {
-		
+
 		//if the chosen random number is 0, then player 1 starts
 		if(random.nextInt(2)==0) {
 			player1_turn=true;
 			textfield.setText("X turn");
 		}
-		
+
 		//if it's not player 1's turn, then it's player 2's turn
 		else {
 			player1_turn=false;
@@ -162,7 +173,7 @@ public class TicTacToe implements ActionListener{
 				) {
 			xWins();
 		}
-		
+
 		//check O win conditions
 		if(
 				(buttons[0].getText()=="O") &&
