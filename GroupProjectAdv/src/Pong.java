@@ -28,7 +28,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 	private int score1 = 0, score2 = 0;
 	private int paddle1x = 0, paddle2x = WIDTH-PADDLE_WIDTH;
 
-	// your instance variables here, I've given you a few 
+	// some instance variables
 	private boolean up1, down1, up2, down2; 		// booleans to keep track of paddle movement
 	private boolean solo = false;					// playing against AI
 	private boolean addBall = false;				// adds a new ball to the game which AI can't beat
@@ -49,7 +49,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 		run();
 	}
 
-	// this method moves the ball at each timestep
+	// this method moves the ball
 	public void move_ball() {
 		ballX += speedX;
 		ballY += speedY;
@@ -150,7 +150,6 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 
 
 	// defines what we want to happen anytime we draw the game
-	// you simply need to fill in a few parameters here
 	public void paint(Graphics g) {
 
 		// background color is gray
@@ -176,7 +175,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 
 		}		
 
-		// writes the score of the game - you just need to fill the scores in
+		// writes the score of the game
 		Font f = new Font("Arial", Font.BOLD, 14);
 		g.setFont(f);
 		// makes score in blue for blue paddle (ADDITIONAL)
@@ -282,16 +281,18 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 			move_paddles();
 			check_collisions();
 
+
 			//rests for a hundredth of a second
 			try {
+				
 				Thread.sleep(10);
-			} catch (Exception ex) {}
+			} 
+
+			catch (Exception ex) {
+
+			}
 		}
 	}
-
-
-
-	// does complicated stuff to initialize the graphics and key listeners
 
 
 	// checks if the user has pushed the restart button
@@ -302,9 +303,8 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 			restart();
 	}
 
-	// method does nothing
 	public void keyTyped(KeyEvent e) {
-		
+
 	}
 
 	//main method
