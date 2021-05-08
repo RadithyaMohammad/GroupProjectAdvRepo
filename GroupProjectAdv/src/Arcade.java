@@ -18,37 +18,48 @@ public class Arcade implements ActionListener {
 	JButton game3;
 	JButton guidelines;
 	Image img;
+	JLabel welcome;
 	JLabel label;
 	
 	public Arcade() {
-		frame = new JFrame("Welcome to the Arcade");
+		frame = new JFrame("");
 		frame.setSize(800, 800);
 		frame.setResizable(false);
 		frame.setFocusable(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		game1 = new JButton("Pong");
-		game1.setBounds(101,30,200,100);
+		game1.setBounds(251,183,200,100);
+		game1.setFont(new Font("Arial",Font.PLAIN,30));
 		game1.addActionListener(this);
 		
 		game2 = new JButton("Snake");
-		game2.setBounds(101,130,200,100);
+		game2.setBounds(251,283,200,100);
+		game2.setFont(new Font("Arial",Font.PLAIN,30));
 		game2.addActionListener(this);
 		
 		game3 = new JButton("Tic-Tac-Toe");
-		game3.setBounds(101,230,200,100);
+		game3.setBounds(251,383,200,100);
+		game3.setFont(new Font("Arial",Font.PLAIN,30));
 		game3.addActionListener(this);
 		
-		guidelines = new JButton("Guidelines");
-		guidelines.setBounds(301, 30, 100, 300);
+		guidelines = new JButton("Tutorial");
+		guidelines.setBounds(451, 183, 100, 300);
+		guidelines.setFont(new Font("Arial",Font.PLAIN,20));
 		guidelines.addActionListener(this);
 		
+		welcome = new JLabel("Welcome to the Arcade");
+		welcome.setBounds(110, 70, 700, 40);
+		welcome.setFont(new Font("Arial",Font.BOLD,50));
+		
 		label = new JLabel();
+		
 		
 		frame.add(game1);
 		frame.add(game2);
 		frame.add(game3);
 		frame.add(guidelines);
+		frame.add(welcome);
 		frame.add(label);
 		
 		frame.add(new JLabel(new ImageIcon("ArcadeMachine.jpeg")));
@@ -69,10 +80,12 @@ public class Arcade implements ActionListener {
 				+ "Try and collect as much apples as you can to grow larger.\n"
 				+ "Avoid overlapping yourself or reaching the edge as you will die.\n"
 				+ "Try reaching as much score as you can without the game ending! Good luck!\n\n"
-				+ "Guidlines on how to play Tic Tac Toe!\n");
+				+ "Guidlines on how to play Tic Tac Toe!\n"
+				+ "One person is X, and the other is O. The aim of the game is to get three of your sybmols in a row.\n"
+				+ "Just press on any of the available squares and try to outsmart your opponent.");
 		ta.setBounds(0, 0, 500, 200);
 		gf.add(ta);
-		gf.setSize(500,200);
+		gf.setSize(720,300);
 		gf.setVisible(true);
 	}
 	
