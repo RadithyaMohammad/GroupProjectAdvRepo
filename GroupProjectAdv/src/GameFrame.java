@@ -1,9 +1,5 @@
-import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class GameFrame extends JFrame implements ActionListener{
@@ -25,6 +21,6 @@ public class GameFrame extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String[] args) {
-		GameFrame runner = new GameFrame();
+		new GameFrame();
 	}
 }
