@@ -8,10 +8,11 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-//April 27th, 10 PM 
 //Radithya and Sanad
+//May 11th, 2021
 public class Arcade implements ActionListener {
 	
+	//declaring variables
 	JFrame frame;
 	JButton game1;
 	JButton game2;
@@ -21,6 +22,7 @@ public class Arcade implements ActionListener {
 	JLabel welcome;
 	JLabel label;
 	
+	//constructor
 	public Arcade() {
 		frame = new JFrame("");
 		frame.setSize(800, 800);
@@ -67,6 +69,7 @@ public class Arcade implements ActionListener {
 		frame.setVisible(true);
 	}
 	
+	//creating the frame for instructions of each game
 	public void guidelines() {
 		JFrame gf= new JFrame("Guidelines");
 		TextArea ta = new TextArea();
@@ -88,6 +91,8 @@ public class Arcade implements ActionListener {
 		gf.setSize(720,300);
 		gf.setVisible(true);
 	}
+	
+	//buttons for each game
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==game1) {
@@ -95,7 +100,7 @@ public class Arcade implements ActionListener {
 		}
 		
 		if (e.getSource()==game2) {
-			new GameFrame();
+			new SnakeFrame();
 		}
 		
 		if (e.getSource()==game3)

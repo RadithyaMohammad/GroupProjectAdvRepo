@@ -1,14 +1,16 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+//Radithya and Sanad
+//May 11th, 2021
 
 //this class creates the frame for snake
-public class GameFrame extends JFrame implements ActionListener{
+public class SnakeFrame extends JFrame implements ActionListener{
 
-	GameFrame(){
+	SnakeFrame(){
 		
 		//adding the GamePanel class
-		GamePanel panel = new GamePanel();
+		SnakePanel panel = new SnakePanel();
 		
 		this.add(panel);
 		this.setTitle("Snake");
@@ -25,6 +27,6 @@ public class GameFrame extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String[] args) {
-		new GameFrame();
+		new SnakeFrame();
 	}
 }

@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+//Radithya and Sanad
+//May 11th, 2021
 
 public class Pong extends JPanel implements KeyListener, ActionListener {
 
@@ -31,7 +33,6 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 	private boolean addBall = false;				// adds a new ball to the game which AI can't beat
 	
 	Timer timer = new Timer(10, this);
-	
 	
 	//constructor
 	public Pong() {
@@ -282,10 +283,6 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 		
 			}
 			
-		
-		
-	
-
 	// checks if the user has pushed the restart button
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==timer) {
