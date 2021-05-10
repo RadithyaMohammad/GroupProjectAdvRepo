@@ -9,6 +9,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 public class Pong extends JPanel implements KeyListener, ActionListener {
 
@@ -25,26 +26,30 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 	private int score1 = 0, score2 = 0;
 	private int paddle1x = 0, paddle2x = WIDTH-PADDLE_WIDTH;
 
-	// some instance variables
 	private boolean up1, down1, up2, down2; 		// booleans to keep track of paddle movement
 	private boolean solo = false;					// playing against AI
 	private boolean addBall = false;				// adds a new ball to the game which AI can't beat
-
+	
+	Timer timer = new Timer(10, this);
+	
+	
+	//constructor
 	public Pong() {
 		JFrame frame = new JFrame();
 		JButton button = new JButton("restart");
-		
+
 		frame.setSize(WIDTH+6, WINDOW_HEIGHT);
 		frame.add(this);
 		frame.add(button, BorderLayout.SOUTH);
 		frame.setResizable(false);
 		frame.setVisible(true);
 		button.addActionListener(this);
-		
+
 		this.addKeyListener(this);
 		this.setFocusable(true);
-
-		run();
+		
+		timer.start();
+		
 	}
 
 	// this method moves the ball
@@ -147,14 +152,13 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 	}
 
 
-	// defines what we want to happen anytime we draw the game
+	// defines what we want to happen any time we draw the game
 	public void paint(Graphics g) {
 
 		// background color is gray
 		g.setColor(Color.LIGHT_GRAY);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 
-		// draw your rectangles and circles here
 		g.setColor(new Color(0, 0, 0));
 		g.fillOval(ballX, ballY, DIAM, DIAM);
 
@@ -165,7 +169,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 		g.fillRect(paddle2x , paddle2, PADDLE_WIDTH, PADDLE_HEIGHT);
 
 
-		// Adds a new ball to the game (AI loses to this) (ADDITIONAL)
+		// Adds a new ball to the game (AI loses to this) 
 		if (addBall) {
 
 			g.setColor(new Color(255, 255, 255));
@@ -176,10 +180,10 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 		// writes the score of the game
 		Font f = new Font("Arial", Font.BOLD, 14);
 		g.setFont(f);
-		// makes score in blue for blue paddle (ADDITIONAL)
+		// makes score in blue for blue paddle
 		g.setColor(Color.blue);
 		g.drawString("P1 Score: " + score1, WIDTH/5, 20);
-		// makes score in red for red paddle (ADDITIONAL)
+		// makes score in red for red paddle
 		g.setColor(Color.red);
 		g.drawString("P2 Score: " + score2, WIDTH*3/5, 20);
 	}
@@ -243,7 +247,7 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 			addBall = false;
 			speedX2 = 0;
 			speedY2 = 0;
-		
+
 		}
 	}
 
@@ -268,34 +272,27 @@ public class Pong extends JPanel implements KeyListener, ActionListener {
 	// this method runs the actual game.
 	public void run() {
 
-		// closing the graphics window will end the program
-		while (true) {
-
-			// draws the game
-			repaint();
-
 			// we move the ball, paddle, and check for collisions
-			// every hundredth of a second
 			move_ball();
 			move_paddles();
 			check_collisions();
+			
+			repaint();
 
-
-			//rests for a hundredth of a second
-			try {				
-				Thread.sleep(10);
-			} 
-
-			catch (Exception ex) {
-				System.out.println("failed");
+		
 			}
-		}
-	}
-
+			
+		
+		
+	
 
 	// checks if the user has pushed the restart button
 	public void actionPerformed(ActionEvent e) {
-
+		if (e.getSource()==timer) {
+			run();
+			return;
+		}
+		
 		String str = e.getActionCommand();
 		if (str.equals("restart")) 
 			restart();

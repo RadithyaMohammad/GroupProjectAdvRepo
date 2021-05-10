@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-//May 8th, 10 PM 
+//April 27th, 10 PM 
 //Radithya and Sanad
 public class Arcade implements ActionListener {
 	
@@ -27,6 +27,7 @@ public class Arcade implements ActionListener {
 		frame.setResizable(false);
 		frame.setFocusable(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
 		
 		game1 = new JButton("Pong");
 		game1.setBounds(251,183,200,100);
@@ -87,18 +88,19 @@ public class Arcade implements ActionListener {
 		gf.setSize(720,300);
 		gf.setVisible(true);
 	}
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()==game1) 
+		if (e.getSource()==game1) {
 			new Pong();
+		}
 		
-		if (e.getSource()==game2)
+		if (e.getSource()==game2) {
 			new GameFrame();
+		}
 		
 		if (e.getSource()==game3)
 			new TicTacToe();
-		 
+		
 		if (e.getSource()==guidelines) {
 			guidelines();
 		}

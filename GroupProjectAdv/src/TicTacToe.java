@@ -242,6 +242,6 @@ public class TicTacToe implements ActionListener{
 	}
 
 	public static void main(String[] args) {
-		TicTacToe runner = new TicTacToe();
+		new TicTacToe();
 	}
 }

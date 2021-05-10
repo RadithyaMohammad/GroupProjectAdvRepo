@@ -1,19 +1,26 @@
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.Random;
 
+//the panel class that holds all of the snake components
 public class GamePanel extends JPanel implements ActionListener{
 
 	static final int SCREEN_WIDTH = 700;
 	static final int SCREEN_HEIGHT = 700;
-	static final int UNIT_SIZE = 50;
-	static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
+	static final int UNIT_SIZE = 25;  //how big the objects in the game are
+	static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE); //calculating how many objects can fit on the screen
 	static final int DELAY = 125;
+	
+	//arrays for holding all the body parts of the snake
 	final int x[] = new int[GAME_UNITS];
 	final int y[] = new int[GAME_UNITS];
+	
 	int bodyParts = 6;
 	int applesEaten;
+	
+	//coordinates for the apple
 	int appleX;
 	int appleY;
 	char direction = 'R';
@@ -21,7 +28,10 @@ public class GamePanel extends JPanel implements ActionListener{
 	Timer timer;
 	Random random;
 	
+	//constructor
 	GamePanel(){
+		
+		//setting up the panel
 		random = new Random();
 		this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
 		this.setBackground(Color.black);
@@ -29,12 +39,20 @@ public class GamePanel extends JPanel implements ActionListener{
 		this.addKeyListener(new MyKeyAdapter());
 		startGame();
 	}
+	
+	//creates a new apple on the screen
+	public void newApple(){
+		appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
+		appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+	}
+	
 	public void startGame() {
 		newApple();
 		running = true;
 		timer = new Timer(DELAY,this);
 		timer.start();
 	}
+	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		draw(g);
@@ -52,7 +70,7 @@ public class GamePanel extends JPanel implements ActionListener{
 				}
 				else {
 					g.setColor(new Color(45,180,0));
-					//g.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
+					g.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
 					g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
 				}			
 			}
@@ -66,32 +84,32 @@ public class GamePanel extends JPanel implements ActionListener{
 		}
 		
 	}
-	public void newApple(){
-		appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
-		appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
-	}
+	
 	public void move(){
+		//shifting every body part in the array by 1
 		for(int i = bodyParts;i>0;i--) {
 			x[i] = x[i-1];
 			y[i] = y[i-1];
 		}
 		
+		//creating cases for each possible direction
 		switch(direction) {
 		case 'U':
-			y[0] = y[0] - UNIT_SIZE;
+			y[0] = y[0] - UNIT_SIZE; //if going up, from the y coordinate of the head, go to the next body part, which is below it
 			break;
 		case 'D':
-			y[0] = y[0] + UNIT_SIZE;
+			y[0] = y[0] + UNIT_SIZE; //if going down, from the y coordinate of the head, go to the next body part, which is above
 			break;
 		case 'L':
-			x[0] = x[0] - UNIT_SIZE;
+			x[0] = x[0] - UNIT_SIZE; //if going left, from the x coordinate of the head, go to the next body part, which is to the right
 			break;
 		case 'R':
-			x[0] = x[0] + UNIT_SIZE;
+			x[0] = x[0] + UNIT_SIZE; //if going right, from the x coordinate of the head, go to the next body part, which is to the left
 			break;
 		}
 		
 	}
+	
 	public void checkApple() {
 		if((x[0] == appleX) && (y[0] == appleY)) {
 			bodyParts++;
